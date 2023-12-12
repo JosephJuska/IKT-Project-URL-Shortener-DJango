@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Short Url</title>
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'css/short.css' %}">
+    </head>
+    <body>
+        <section>
+            <div>
+                <p>You will be redirected to:</p>
+                <p class="url">{{real_url}}</p>
+                <a href="http://127.0.0.1:8000/redirect/{{short_url}}">Redirect</a>
+            </div>
+        </section>
+    </body>
+</html>

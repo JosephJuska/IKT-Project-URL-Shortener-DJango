@@ -1,0 +1,40 @@
+section {
+    background-color: var(--black);
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section div {
+    width: min(80%, 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    border: 4px solid var(--orange);
+    gap: 2rem;
+    text-align: center;
+}
+
+section div h1 {
+    color: var(--orange);
+    font-size: clamp(2rem, 10vw, 3rem);
+    font-weight: bold;
+}
+
+section div p {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: var(--white);
+    font-weight: bold;
+}
+
+section div p a {
+    color: var(--orange);
+}
+
+section div p a:hover {
+    opacity: 0.6;
+}

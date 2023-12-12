@@ -1,0 +1,25 @@
+ul {
+    width: min(80%, 400px);
+}
+
+.message {
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    border: 2px solid transparent;
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    border-color: var(--white);
+    color: var(--white);
+    max-width: 100%;
+    text-align: center;
+}
+
+.error {
+    color: var(--red);
+    border-color: var(--red);
+}
+
+.success {
+    color: var(--green);
+    border-color: var(--green);
+}

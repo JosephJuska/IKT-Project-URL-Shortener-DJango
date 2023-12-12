@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome To Your Account {{request.user.username}}!</title>
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+        <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    </head>
+    <body>
+        <section>
+            <div class='user-data'>
+                <div class="user">
+                    <p>Welcome, <span>{{request.user.username}}</span></p>
+                    <a href="{% url 'logout' %}">Log Out</a>
+                </div>
+                <div class="data">
+                    <h1>Data</h1>
+                    <p>Total URLs: <span>{{ content|length }}</span></p>
+                    <p>Total Clicks: <span>{{ click_amount }}</span></p>
+                </div>
+            </div>
+            <div class="urls">
+                <form method='post' action="{% url 'account' %}">
+                    {% csrf_token %}
+                    <div>
+                        <label for="url">Create Your Short URL</label>
+                        <input placeholder="Ex: https://test.com" type="text" name="url" id="url" required maxlength="1000">
+                    </div>
+                    <input class="submit" type="submit" name="submit" value="Create">
+                </form>
+                {% if messages %}
+                    {% for message in messages %}
+                    <ul>
+                        <li class="message {% if message.tags %}{{message.tags}}{% endif %}">{{ message }}</li>
+                    </ul>
+                    {% endfor %}
+                {% endif %}
+
+                {% if content %}
+                <ul class="urls-list">
+                    {% for item in content %}
+                        <li>
+                            <form method="post" action="{% url 'account' %}">
+                                {% csrf_token %}
+                                <p>URL: <span>{{ item.url }}</span></p>
+                                <p>Short URL: <span id="{{index}}">http://127.0.0.1:8000{% url 'short' short_url=item.short_url%}</span></p>
+                                <p>Use Amount: <span>{{item.use_amount}}</span></p>
+                                <input type="hidden" name="url_id" value="{{ item.id }}">
+                                <div>
+                                    <input type="submit" name="submit" value="Delete">
+                                </div>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="no-url" style="font-size: clamp(1rem, 4vw, 1.5rem);
+                color: var(--orange);">No short urls</p>
+                {% endif %}
+            </div>
+        </section>
+    </body>
+</html>

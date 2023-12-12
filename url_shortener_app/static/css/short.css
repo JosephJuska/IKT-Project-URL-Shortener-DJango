@@ -1,0 +1,43 @@
+section {
+    background-color: var(--black);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section div {
+    width: min(80%, 600px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+section div p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--white);
+    font-weight: bold;
+    text-align: center;
+}
+
+section div .url {
+    color: var(--orange);
+}
+
+section div a {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    color: var(--orange);
+    padding: 0.5rem 2rem;
+    border: 2px solid var(--orange);
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+section div a:hover {
+    color: var(--white);
+    background-color: var(--orange);
+    border-color: transparent;
+}

@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --black: #1F2232;
+    --white: #F4F3EE;
+    --orange: #EC7357;
+    --red: #9E0031;
+    --green: #226F54;
+}
+
+a {
+    transition: all .3s ease;
+}

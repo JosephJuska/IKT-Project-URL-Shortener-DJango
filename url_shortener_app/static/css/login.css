@@ -1,0 +1,78 @@
+section {
+    background-color: var(--black);
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+form {
+    width: min(80%, 600px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    padding-bottom: 2rem;
+    gap: 3rem;
+    border: 4px solid var(--orange);
+    border-radius: 10px;
+}
+
+form h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    font-weight: bold;
+    color: var(--orange);
+}
+
+form div {
+    display: flex;
+    width: min(100%, 400px);
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form div label {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: var(--orange);
+    font-weight: bold;
+}
+
+form div input {
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    padding: 0.5rem 1.5rem;
+    font-size: clamp(0.825rem, 2vw, 1.125rem);
+    border-radius: 20px;
+}
+
+form div .submit {
+    padding: 0.5rem 2rem;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+form div .submit:hover {
+    color: var(--white);
+    background-color: var(--orange);
+    border-color: transparent;
+    cursor: pointer;
+}
+
+form p {
+    color: var(--white);
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+form p a {
+    color: var(--orange);
+    opacity: 1;
+}
+
+form p a:hover {
+    opacity: 0.6;
+}

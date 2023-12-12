@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>URL Shortener</title>
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+    <body>
+        <section>
+            <div class="main-div">
+                <h1>Welcome to URL Shortener!</h1>
+                <p>{% lorem 1 b %}</p>
+                <div class="sub-div">
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'register' %}">Register</a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
